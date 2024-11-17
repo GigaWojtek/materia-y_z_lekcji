@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konwerter</title>
+    </head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Konwerter jednostek</h1>
+        </header>
+        <main>
+            <script>
+                let jednostka; 
+                let wartosc;  
+                let wynik;     
+                let test = true; 
+                do {
+                    // Podawanie jednostki
+                    jednostka = prompt("Na jaką jednostkę chcesz przeliczyć? Wpisz 'km' lub 'mile'.").toLowerCase();
+
+                    if (jednostka === 'km' || jednostka === 'mile') {
+                        do {
+                            // Podawanie wartości
+                            let jednostkaTekst;
+                            if (jednostka === 'km') {
+                                jednostkaTekst = 'mil';
+                            } else {
+                                jednostkaTekst = 'km';
+                            }
+
+                            wartosc = prompt(`Podaj ilość ${jednostkaTekst}, które chcesz przeliczyć:`);
+
+                            // Sprawdzanie liczby
+                            if (!isNaN(wartosc) && wartosc.trim() !== '') {
+                                wartosc = parseFloat(wartosc); // Konwersja na liczbę
+
+                                if (jednostka === 'km') {
+                                    wynik = wartosc * 1.61; // Przeliczenie na kilometry
+                                    document.write(`${wartosc} mil to ${wynik.toFixed(2)} km.`); //wynik do 2 po przecinku
+                                } else {
+                                    wynik = wartosc * 0.62; // Przeliczenie na mile
+                                    document.write(`${wartosc} km to ${wynik.toFixed(2)} mil.`); //wynik do 2 po przecinku
+                                }
+                                test = false; // Wyjście z pętli
+                            } else {
+                                alert("Proszę podać prawidłową liczbę!"); //Powrót
+                            }
+                        } while (isNaN(wartosc) || wartosc.trim() === '');
+                    } else {
+                        alert("Wybrana opcja nie jest dostępna. Spróbuj ponownie!"); //Powrót
+                    }
+                } while (test);
+            </script>
+        </main>
+        <footer>
+            &copy Me XXI c.
+        </footer>
+    </div>
+</body>
+</html>
