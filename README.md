@@ -1,1 +1,1 @@
-# materiały_z_lekcji
+# materialy_z_lekcji
