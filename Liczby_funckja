@@ -19,7 +19,7 @@
                 function Okienko() {
                     // Pobieranie pierwszej liczby
                     let liczba1 = prompt("Podaj pierwszą liczbę:");
-                    // Sprawdzanie, czy to jest liczba
+                    //czy to jest liczba
                     while (isNaN(liczba1) || liczba1.trim() == '') {
                         liczba1 = prompt("Podaj poprawną pierwszą liczbę:");
                     }
@@ -27,29 +27,29 @@
 
                     // Pobieranie drugiej liczby
                     let liczba2 = prompt("Podaj drugą liczbę:");
-                    // Sprawdzanie, czy to jest liczba
+                    // czy to jest liczba
                     while (isNaN(liczba2) || liczba2.trim() == '') {
                         liczba2 = prompt("Podaj poprawną drugą liczbę:");
                     }
                     liczba2 = parseFloat(liczba2); // Konwersja na liczbę
 
-                    // Pobieranie działania
-                    let dzialanie = prompt("Podaj działanie (dodawanie, odejmowanie, mnożenie, dzielenie):");
+                    // działanie
+                    let dzialanie = prompt("Podaj działanie (+, -, *, /):");
 
-                    // Sprawdzanie, czy wybrane działanie jest prawidłowe
-                    while (!["dodawanie", "odejmowanie", "mnożenie", "dzielenie"].includes(dzialanie)) {
-                        dzialanie = prompt("Podaj poprawne działanie (dodawanie, odejmowanie, mnożenie, dzielenie):");
+                    // czy jest git
+                    while (!["+", "-", "*", "/"].includes(dzialanie)) {
+                        dzialanie = prompt("Podaj poprawne działanie (+, -, *, /):");
                     }
 
-                    // Wykonywanie odpowiedniego działania
+                    // działanie
                     let wynik;
-                    if (dzialanie === "dodawanie") {
+                    if (dzialanie === "+") {
                         wynik = liczba1 + liczba2;
-                    } else if (dzialanie === "odejmowanie") {
+                    } else if (dzialanie === "-") {
                         wynik = liczba1 - liczba2;
-                    } else if (dzialanie === "mnożenie") {
+                    } else if (dzialanie === "*") {
                         wynik = liczba1 * liczba2;
-                    } else if (dzialanie === "dzielenie") {
+                    } else if (dzialanie === "/") {
                         if (liczba2 === 0) {
                             alert("Nie można dzielić przez 0!");
                             return;
@@ -57,17 +57,15 @@
                         wynik = liczba1 / liczba2;
                     }
 
-                    // Wyświetlanie wyniku
+                    // Wynik
                     alert("Wynik: " + wynik);
                 }
-
-                // Wywołanie funkcji
                 Okienko();
             </script>
         </main>
 
         <footer>
-            &copy; Me 2025
+            &copy; Moja robota
         </footer>
     </div>
 </body>
